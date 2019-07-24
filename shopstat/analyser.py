@@ -7,5 +7,4 @@ def calculate_receipt_price(receipt):
 
 def test():
     receipt = loader.test()
-    print(typeof(receipt))
     print(calculate_receipt_price(receipt))

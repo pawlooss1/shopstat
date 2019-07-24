@@ -38,3 +38,4 @@ def test():
     print(receipt.get_products())
     receipt.add_product(p2, 0.5)
     print(receipt.get_products())
+    return receipt
