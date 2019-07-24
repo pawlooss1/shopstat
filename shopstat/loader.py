@@ -4,7 +4,8 @@ class Receipt:
     '''
     Represents receipt as an object.
     '''
-    def __init__(self):
+    def __init__(self, date):
+        self.date = date
         self.products = pd.DataFrame(columns=['Name', 'Type', 'Price', 'Amount'])
     
     def add_product(self, product, amount):
