@@ -1,18 +1,26 @@
 import pandas as pd
 
+
 class Receipt:
     '''
     Represents receipt as an object.
     '''
+    COLUMN_NAMES = [
+        'Name',
+        'Type',
+        'Price',
+        'Amount'
+    ]
+
     def __init__(self, date):
         self.date = date
-        self.products = pd.DataFrame(columns=['Name', 'Type', 'Price', 'Amount'])
-    
+        self.products = pd.DataFrame(columns=Receipt.COLUMN_NAMES)
+
     def add_product(self, product, amount):
         row = product.get_attributes()
         row['Amount'] = amount
         self.products = self.products.append(row, ignore_index=True)
-    
+
     def get_products(self):
         return self.products
 
@@ -21,11 +29,12 @@ class Product:
     '''
     Represents product.
     '''
+
     def __init__(self, name, type, price):
         self.name = name
         self.type = type
         self.price = price
-    
+
     def get_attributes(self):
         return {'Name': self.name, 'Type': self.type, 'Price': self.price}
 
