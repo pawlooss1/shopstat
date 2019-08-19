@@ -1,4 +1,4 @@
-import loader
+#import loader
 import numpy as np
 
 
@@ -14,5 +14,5 @@ def round_prices(prices):
 
 
 def test():
-    receipt = loader.test()
+    #receipt = loader.test()
     print(calculate_receipt_price(receipt))
