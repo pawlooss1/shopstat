@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import date
 
 
 class Receipt:
@@ -42,7 +43,7 @@ class Product:
 def test():
     p1 = Product('milk', 'diary', 2.99)
     p2 = Product('organges', 'fruits', 1.05)
-    receipt = Receipt()
+    receipt = Receipt(date.today())
     print(receipt.get_products())
     receipt.add_product(p1, 2)
     print(receipt.get_products())
